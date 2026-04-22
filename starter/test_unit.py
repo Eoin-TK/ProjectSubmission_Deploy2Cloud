@@ -1,9 +1,9 @@
 import pytest
 
 import pandas as pd
-from ml.data import process_data
-from ml.model import train_model
-from ml.model import inference
+#from ml.data import process_data
+#from ml.model import train_model
+#from ml.model import inference
 
 @pytest.fixture
 def sample_data():
