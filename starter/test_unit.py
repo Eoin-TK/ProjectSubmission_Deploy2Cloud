@@ -5,7 +5,7 @@ from ml.data import process_data
 from ml.model import train_model
 from ml.model import inference
 
-@pytest.fixture():
+@pytest.fixture
 def sample_data():
     return pd.read_csv(pd.read_csv("./census.csv"), nrows=5000)
 
