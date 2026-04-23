@@ -18,7 +18,7 @@ class TestProcessData:
             label="salary",
             training=True
         )
-        assert isinstance(X, np.array)
+        assert isinstance(X, np.ndarray)
 
     def test_two(self, sample_data):
         X, y, encoder, lb = process_data(
@@ -26,7 +26,7 @@ class TestProcessData:
             label="salary",
             training=True
         )
-        assert isinstance(y, np.array)
+        assert isinstance(y, np.ndarray)
 
     def test_three(self, sample_data):
         X, y, encoder, lb = process_data(
