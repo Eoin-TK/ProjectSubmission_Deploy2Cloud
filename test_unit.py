@@ -24,28 +24,50 @@ def cat_features():
     ]
 
 class TestProcessData:
-    def __init__(self, sample_data, cat_features):
-        self.f_in = sample_data
-        self.f_out_X, self.f_out_y, self.f_out_encoder, self.f_out_lb = process_data(
+    def test_one(self):
+        X, y, encoder, lb = process_data(
             sample_data, categorical_features=cat_features,
             label="salary",
             training=True
         )
-
-    def test_one(self):
-        assert isinstance(self.f_out_X, pd.DataFrame)
+        assert isinstance(X, pd.DataFrame)
 
     def test_two(self):
-        assert isinstance(self.f_out_y, pd.DataFrame)
+        X, y, encoder, lb = process_data(
+            sample_data, categorical_features=cat_features,
+            label="salary",
+            training=True
+        )
+        assert isinstance(y, pd.DataFrame)
 
     def test_three(self):
-        assert isinstance(self.f_out_encoder, OneHotEncoder)
+        X, y, encoder, lb = process_data(
+            sample_data, categorical_features=cat_features,
+            label="salary",
+            training=True
+        )
+        assert isinstance(encoder, OneHotEncoder)
 
     def test_four(self):
-        assert isinstance(self.f_out_lb, LabelBinarizer) 
+        X, y, encoder, lb = process_data(
+            sample_data, categorical_features=cat_features,
+            label="salary",
+            training=True
+        )
+        assert isinstance(lb, LabelBinarizer) 
 
     def test_five(self):
-        assert len(self.f_out_X) == len(self.f_in)
+        X, y, encoder, lb = process_data(
+            sample_data, categorical_features=cat_features,
+            label="salary",
+            training=True
+        )
+        assert len(X) == len(sample_data)
 
     def test_six(self):
-        assert len(self.f_out_y) == len(self.f_out_X)
+        X, y, encoder, lb = process_data(
+            sample_data, categorical_features=cat_features,
+            label="salary",
+            training=True
+        )
+        assert len(y) == len(self.X)
