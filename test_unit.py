@@ -3,13 +3,38 @@ import pytest
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier
+
 from ml.data import process_data
-#from ml.model import train_model
+from ml.model import train_model
 #from ml.model import inference
 
 @pytest.fixture
 def sample_data():
     return pd.read_csv("./census.csv", nrows=5000)
+
+@pytest.fixture
+def sample_model(sample_data):
+    cat_features = [
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
+    ]
+
+    X_, y, encoder, lb = process_data(
+        sample_data, categorical_features=cat_features,
+        label="salary",
+        training=True
+    )
+
+    rf_model = train_model(X, y)
+
+    return rf_model
 
 class TestProcessData:
     def test_one(self, sample_data):
@@ -59,3 +84,8 @@ class TestProcessData:
             training=True
         )
         assert len(y) == len(X)
+
+
+class TestTrainModel:
+    def test_one(self, sample_model):
+        assert isinstance(rf_model, RandomForestClassifier)
