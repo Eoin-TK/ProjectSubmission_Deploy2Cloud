@@ -10,23 +10,10 @@ from ml.data import process_data
 def sample_data():
     return pd.read_csv("./census.csv", nrows=5000)
 
-@pytest.fixture
-def cat_features():
-    return [
-        "workclass",
-        "education",
-        "marital-status",
-        "occupation",
-        "relationship",
-        "race",
-        "sex",
-        "native-country"
-    ]
-
 class TestProcessData:
     def test_one(self):
         X, y, encoder, lb = process_data(
-            sample_data, categorical_features=cat_features,
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
@@ -34,7 +21,7 @@ class TestProcessData:
 
     def test_two(self):
         X, y, encoder, lb = process_data(
-            sample_data, categorical_features=cat_features,
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
@@ -42,7 +29,7 @@ class TestProcessData:
 
     def test_three(self):
         X, y, encoder, lb = process_data(
-            sample_data, categorical_features=cat_features,
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
@@ -50,7 +37,7 @@ class TestProcessData:
 
     def test_four(self):
         X, y, encoder, lb = process_data(
-            sample_data, categorical_features=cat_features,
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
@@ -58,7 +45,7 @@ class TestProcessData:
 
     def test_five(self):
         X, y, encoder, lb = process_data(
-            sample_data, categorical_features=cat_features,
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
@@ -66,7 +53,7 @@ class TestProcessData:
 
     def test_six(self):
         X, y, encoder, lb = process_data(
-            sample_data, categorical_features=cat_features,
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
