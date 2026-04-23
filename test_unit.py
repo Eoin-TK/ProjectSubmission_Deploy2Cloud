@@ -12,55 +12,49 @@ def sample_data():
     return pd.read_csv("./census.csv", nrows=5000)
 
 class TestProcessData:
-    def test_one(self):
-        input_data=sample_data
+    def test_one(self, sample_data):
         X, y, encoder, lb = process_data(
-            input_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
         assert isinstance(X, np.array)
 
-    def test_two(self):
-        input_data=sample_data
+    def test_two(self, sample_data):
         X, y, encoder, lb = process_data(
-            input_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
         assert isinstance(y, np.array)
 
-    def test_three(self):
-        input_data=sample_data
+    def test_three(self, sample_data):
         X, y, encoder, lb = process_data(
-            input_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
         assert isinstance(encoder, OneHotEncoder)
 
-    def test_four(self):
-        input_data=sample_data
+    def test_four(self, sample_data):
         X, y, encoder, lb = process_data(
-            input_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
         assert isinstance(lb, LabelBinarizer) 
 
-    def test_five(self):
-        input_data=sample_data
+    def test_five(self, sample_data):
         X, y, encoder, lb = process_data(
-            input_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
         assert len(X) == len(sample_data)
 
-    def test_six(self):
-        input_data=sample_data
+    def test_six(self, sample_data):
         X, y, encoder, lb = process_data(
-            input_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
+            sample_data, categorical_features=["workclass","education","marital-status","occupation","relationship","race","sex","native-country"],
             label="salary",
             training=True
         )
