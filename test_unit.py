@@ -26,7 +26,7 @@ def sample_model(sample_data):
         "native-country",
     ]
 
-    X_, y, encoder, lb = process_data(
+    X, y, encoder, lb = process_data(
         sample_data, categorical_features=cat_features,
         label="salary",
         training=True
@@ -88,4 +88,4 @@ class TestProcessData:
 
 class TestTrainModel:
     def test_one(self, sample_model):
-        assert isinstance(rf_model, RandomForestClassifier)
+        assert isinstance(sample_model, RandomForestClassifier)
