@@ -13,7 +13,7 @@ def get_data(path2file="./assets/census.csv"):
     
     #load data from csv and split into train/test datasets
     data_all = pd.read_csv(path2file)
-    data_train, data_test = train_test_split(data, test_size=0.20)
+    data_train, data_test = train_test_split(data_all, test_size=0.20)
 
     cat_features = [
         "workclass",
