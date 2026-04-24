@@ -11,7 +11,7 @@ from ml.model import train_model
 
 @pytest.fixture
 def sample_data():
-    return pd.read_csv("./census.csv", nrows=5000)
+    return pd.read_csv("./assets/census.csv", nrows=5000)
 
 @pytest.fixture
 def sample_model(sample_data):
