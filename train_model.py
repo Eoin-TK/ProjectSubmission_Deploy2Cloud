@@ -111,4 +111,4 @@ if __name__ == "__main__":
 
     rf_model = get_model(data_train)
 
-    eval_model(data_test, "education", rf_model)
+    eval_model(data_test, "sex", rf_model)
