@@ -59,7 +59,7 @@ def get_model(data_train, train_new=True):
 def eval_model(data_test, feature, model=None):
     if model is None:
         with open("./assets/model.pkl", "rb") as f:
-            rf_model = pickle.load(f)
+            model = pickle.load(f)
 
     with open("./assets/encoder.pkl", "rb") as f:
         encoder = pickle.load(f)
