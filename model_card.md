@@ -19,8 +19,8 @@ Model was evaluated on slices of categorical features using precision, recall an
 
 | Category | Precision | Recall | $F_{\beta}$ |
 |----------|-----------|--------|-------------|
-| Male | 0.74 | 0.63 | 0.68 |
-| Female | 0.71 | 0.59 | 0.65 |
+| Male | 0.73 | 0.65 | 0.69 |
+| Female | 0.80 | 0.62 | 0.69 |
 
 ## Ethical Considerations
 We risk expressing the viewpoint that the attributes in this dataset are the only ones that are predictive of someone's income, even though we know this not to be the case.

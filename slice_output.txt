@@ -1,0 +1,15 @@
+Model Performance on Data Slices: sex
+==============================
+Feature Value: Female
+------------------------------
+2169
+Precision: 0.7955801104972375
+Recall: 0.6153846153846154
+fbeta: 0.6939759036144578
+ 
+Feature Value: Male
+------------------------------
+4344
+Precision: 0.72544080604534
+Recall: 0.6515837104072398
+fbeta: 0.6865315852205006
